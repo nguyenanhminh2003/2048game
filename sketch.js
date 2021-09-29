@@ -1,4 +1,5 @@
 class game {
+  score = 0;
     constructor() {
         this.canvas = null;
         this.context = null;
@@ -16,6 +17,7 @@ class game {
         this.handle();
 
     }
+
 
     init() {
         this.canvas = document.createElement('canvas');
@@ -145,6 +147,8 @@ class game {
 
     handle() {
         document.addEventListener('keydown', (e) => {
+            this.score++
+            document.getElementById('diemSo').innerHTML = this.score
             this.hasChange = false;
             if (e.which == 37) {
                 for (let i = 0; i < 4; i++) {
@@ -232,6 +236,7 @@ class game {
             }
         })
     }
+
 }
 
 var g = new game()
