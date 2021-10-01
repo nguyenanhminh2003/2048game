@@ -57,7 +57,7 @@ class game {
             }
         }
         if (count == 4) {
-            alert('Loss')
+            alert('You lost mtfk')
             location.reload()
 
 
@@ -103,10 +103,12 @@ class game {
         for (let i = 1; i < 4; i++) {
             for (let j = 1; j < 4; j++) {
                 this.context.beginPath();
-                this.context.moveTo(i * 100, 0);
+                this.context.moveTo(i * 100, 0,);
                 this.context.lineTo(i * 100, 400);
                 this.context.moveTo(0, i * 100);
                 this.context.lineTo(400, i * 100);
+                this.context.strokeStyle = "#B2A29F"
+                this.context.lineWidth = 3;
                 this.context.stroke();
             }
         }
@@ -148,7 +150,7 @@ class game {
                 }
 
                 if (this.grid[i][j] != 0) {
-                    this.context.font = '60px time new roman';
+                    this.context.font = '60px Cursive';
                     this.context.fillStyle = 'black';
                     this.context.textAlign = 'center';
                     this.context.fillText(this.grid[i][j], j * 100 + 50, i * 100 + 70);
@@ -202,7 +204,7 @@ class game {
             this.hasChange = false;
             let oldGrid = [...this.grid]
             if (e.which == 37) {
-                // this.checkForLoss();
+
                 if (this.checkMovable(oldGrid, this.grid)) {
                     this.arr[0] = 1;
                 }
@@ -308,6 +310,7 @@ class game {
 
 
     }
+
 
 }
 
