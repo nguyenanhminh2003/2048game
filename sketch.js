@@ -150,7 +150,7 @@ class game {
                 }
 
                 if (this.grid[i][j] != 0) {
-                    this.context.font = '60px Cursive';
+                    this.context.font = '30px Cursive';
                     this.context.fillStyle = 'black';
                     this.context.textAlign = 'center';
                     this.context.fillText(this.grid[i][j], j * 100 + 50, i * 100 + 70);
